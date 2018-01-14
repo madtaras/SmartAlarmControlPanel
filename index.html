@@ -34,7 +34,7 @@
 
         <div class="toolbar">
 
-            <div id="device-name" class="name">Terminal</div>
+            <div id="device-name" class="name">Smart Alarm</div>
 
             <div class="buttons">
 
@@ -52,20 +52,62 @@
 
         <div id="terminal" class="terminal"></div>
 
-        <form id="send-form" class="send-form">
 
-            <input id="input" type="text" aria-label="Input" autocomplete="off" placeholder="Type something to send...">
 
-            <button type="submit" aria-label="Send">
-                <i class="material-icons">send</i>
-            </button>
+        <!-- Body (Parent Block)-->
+<div class="body">
+  <!-- App (Block)-->
+  <div class="app">
+    <!-- App Body (Block)-->
+    <div class="app-body">
+      <!-- Row (Element)-->
+      <div class="app__row">
+        <!-- Alarm (Block)-->
+        <div class="alarm alarm--#{modifier}">
+          <!-- Column (Element)-->
+          <div class="alarm__column">
+          </div>
+          <!-- Column (Element)-->
+          <div class="alarm__column">
+            <!-- Time (Element)-->
+            <div class="alarm__time">8:50</div>
+            <!-- Days (Element)-->
+            <div class="alarm__days">
+              <!-- Day (Element)--><span class="alarm__day">Everyday</span>
+            </div>
+          </div>
+          <!-- Column (Element)-->
+          <div class="alarm__column">
+            <!-- Toggle (Element)-->
+            <label class="alarm__toggle">
+              <input type="checkbox"/>
+              <div class="alarm__toggle-handle"></div>
+            </label>
+          </div>
+        </div>
+      </div>
 
-        </form>
+    </div>
+        <!-- Raised button with ripple -->
 
+        <button id="show-dialog" type="button" class="mdl-button">Edit Alarm</button>
+          <dialog class="mdl-dialog">
+            <h4 class="mdl-dialog__title">Set time for the next alarm:</h4>
+            <div class="mdl-dialog__content">
+              <p>
+                ... time prefs
+              </p>
+            </div>
+            <div class="mdl-dialog__actions">
+              <button type="button" class="mdl-button reset-alarm">OK</button>
+              <button type="button" class="mdl-button close">Cancel</button>
+            </div>
+          </dialog>
     </div>
 
     <script src="js/material.min.js"></script>
     <script src="js/BluetoothTerminal.js"></script>
+    <script src="js/editAlarmDialoge.js"></script>
     <script src="js/main.js"></script>
     <script src="js/companion.js" data-service-worker="sw.js"></script>
 

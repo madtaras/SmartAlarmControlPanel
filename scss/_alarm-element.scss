@@ -1,0 +1,171 @@
+.app {
+  z-index: 1;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: stretch;
+      -ms-flex-pack: stretch;
+          justify-content: stretch;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+.app-header {
+  position: relative;
+  background: #FFF;
+  color: #222;
+  padding: 20px 10px 10px;
+  text-align: center;
+}
+.app-body {
+  padding-top: 15px;
+  height: 100%;
+  overflow: auto;
+}
+
+.app__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  margin: 0 0 20px;
+}
+
+.alarm {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  width: 100%;
+}
+.alarm__column {
+  z-index: 1;
+  position: relative;
+  background: #FFF;
+  width: 50px;
+  min-width: 50px;
+}
+.alarm__column:nth-child(2) {
+  width: 100%;
+}
+.alarm__column:nth-child(3) {
+  width: 60px;
+  min-width: 60px;
+}
+.alarm__icon {
+  display: block;
+  background: #F2CF68;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  margin: 20px auto;
+  -webkit-box-shadow: 0 0 0 2px rgba(242, 207, 104, 0.4), 0 0 0 4px rgba(242, 207, 104, 0.2);
+          box-shadow: 0 0 0 2px rgba(242, 207, 104, 0.4), 0 0 0 4px rgba(242, 207, 104, 0.2);
+}
+.alarm__icon--afternoon {
+  background: #B0BFCC;
+  -webkit-box-shadow: 0 0 0 2px rgba(176, 191, 204, 0.4), 0 0 0 4px rgba(176, 191, 204, 0.2);
+          box-shadow: 0 0 0 2px rgba(176, 191, 204, 0.4), 0 0 0 4px rgba(176, 191, 204, 0.2);
+}
+.alarm__icon--night {
+  position: relative;
+  background: #AFB5BD;
+  -webkit-box-shadow: 0 0 0 2px rgba(175, 181, 189, 0.4), 0 0 0 4px rgba(175, 181, 189, 0.2);
+          box-shadow: 0 0 0 2px rgba(175, 181, 189, 0.4), 0 0 0 4px rgba(175, 181, 189, 0.2);
+  -webkit-transform: translateX(5px);
+          transform: translateX(5px);
+}
+.alarm__icon--night:after {
+  content: '';
+  position: absolute;
+  top: -5px;
+  right: -18px;
+  display: block;
+  background: #FFF;
+  width: 25px;
+  height: 20px;
+  border-radius: 100%;
+}
+.alarm__time {
+  margin: 0 0 10px;
+  font-size: 48px;
+  font-weight: 100;
+}
+.alarm__days {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+}
+.alarm__day:first-child, .alarm__day:last-child {
+  color: #999;
+}
+.alarm__toggle {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  display: block;
+  background: rgba(0, 0, 0, 0.1);
+  width: 24px;
+  height: 2px;
+  border-radius: 4px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+.alarm__toggle input {
+  display: none;
+}
+.alarm__toggle input:checked ~ .alarm__toggle-handle {
+  left: calc(100% - 10px);
+  -webkit-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  -webkit-filter: grayscale(0);
+          filter: grayscale(0);
+}
+.alarm__toggle-handle {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  background: #FA6A5A;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  -webkit-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  -webkit-transition: 0.3s cubic-bezier(0.28, 0.55, 0.385, 1.65);
+  transition: 0.3s cubic-bezier(0.28, 0.55, 0.385, 1.65);
+  cursor: pointer;
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+}
+.alarm--morning .alarm__toggle-handle {
+  background: #F2CF68;
+}
+.alarm--afternoon .alarm__toggle-handle {
+  background: #B0BFCC;
+}
+.alarm--night .alarm__toggle-handle {
+  background: #AFB5BD;
+}
