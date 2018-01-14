@@ -19,6 +19,10 @@ dialog.querySelector('.close').addEventListener('click', function() {
 dialog.querySelector('.set-alarm').addEventListener('click', function() {
     var newAlarmTime = document.getElementById("alarm-time").value;
 
+    if (newAlarmTime.length < 5){
+        newAlarmTime = "0" + currentAlarmTime;
+    }
+
     document.getElementById("currentAlarmTime").innerHTML = newAlarmTime;
     send("SET_TIME__" + newAlarmTime);
     setAlarmToggleState(true);
