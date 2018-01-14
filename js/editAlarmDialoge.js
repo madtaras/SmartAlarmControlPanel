@@ -37,8 +37,8 @@ alarmState.addEventListener('change', function(){
     } else {
         var currentAlarmTime = document.getElementById("currentAlarmTime").innerHTML;
         console.log(currentAlarmTime);
-        if (currentAlarmTime.length < 14){
-            currentAlarmTime = currentAlarmTime.slice(0, 9) + "0" + currentAlarmTime.slice(9, 14);
+        if (currentAlarmTime.length < 5){
+            currentAlarmTime = "0" + currentAlarmTime;
         }
         console.log(currentAlarmTime);
         send("SET_TIME__" + currentAlarmTime);
