@@ -52,40 +52,47 @@
 
         <div id="terminal" class="terminal"></div>
 
+        <form id="send-form" class="send-form">
+  		    <input id="input" type="text" aria-label="Input" autocomplete="off" placeholder="Type something to send...">
+  		    <button type="submit" aria-label="Send">
+                 <i class="material-icons">send</i>
+            </button>
+       </form>
+
 
 
         <!-- Body (Parent Block)-->
-<div class="body">
-  <!-- App (Block)-->
-  <div class="app">
-    <!-- App Body (Block)-->
-    <div class="app-body">
-      <!-- Row (Element)-->
-      <div class="app__row">
-        <!-- Alarm (Block)-->
-        <div class="alarm alarm--#{modifier}">
-          <!-- Column (Element)-->
-          <div class="alarm__column">
-          </div>
-          <!-- Column (Element)-->
-          <div class="alarm__column">
-            <!-- Time (Element)-->
-            <div class="alarm__time">8:50</div>
-            <!-- Days (Element)-->
-            <div class="alarm__days">
-              <!-- Day (Element)--><span class="alarm__day">Everyday</span>
-            </div>
-          </div>
-          <!-- Column (Element)-->
-          <div class="alarm__column">
-            <!-- Toggle (Element)-->
-            <label class="alarm__toggle">
-              <input type="checkbox"/>
-              <div class="alarm__toggle-handle"></div>
-            </label>
-          </div>
-        </div>
-      </div>
+        <div class="body">
+          <!-- App (Block)-->
+          <div class="app">
+            <!-- App Body (Block)-->
+            <div class="app-body">
+              <!-- Row (Element)-->
+              <div class="app__row">
+                <!-- Alarm (Block)-->
+                <div class="alarm alarm--#{modifier}">
+                  <!-- Column (Element)-->
+                  <div class="alarm__column">
+                  </div>
+                  <!-- Column (Element)-->
+                  <div class="alarm__column">
+                    <!-- Time (Element)-->
+                    <div class="alarm__time">8:50</div>
+                    <!-- Days (Element)-->
+                    <div class="alarm__days">
+                      <!-- Day (Element)--><span class="alarm__day">Everyday</span>
+                    </div>
+                  </div>
+                  <!-- Column (Element)-->
+                  <div class="alarm__column">
+                    <!-- Toggle (Element)-->
+                    <label class="alarm__toggle">
+                      <input type="checkbox"/>
+                      <div class="alarm__toggle-handle"></div>
+                    </label>
+                  </div>
+                </div>
+              </div>
 
     </div>
         <!-- Raised button with ripple -->
