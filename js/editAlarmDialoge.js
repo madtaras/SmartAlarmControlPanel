@@ -2,6 +2,8 @@ var dialog = document.querySelector('dialog');
 
 var showDialogButton = document.querySelector('#show-dialog');
 
+var alarmState = document.getElementById('alarm-state');
+
 if (! dialog.showModal) {
     dialogPolyfill.registerDialog(dialog);
 }
@@ -14,7 +16,29 @@ dialog.querySelector('.close').addEventListener('click', function() {
     dialog.close();
 });
 
-dialog.querySelector('.reset-alarm').addEventListener('click', function() {
-    console.log("SEND NEW TIME TO STM");
+dialog.querySelector('.set-alarm').addEventListener('click', function() {
+    var newAlarmTime = document.getElementById("alarm-time").value;
+
+    document.getElementById("currentAlarmTime").innerHTML = newAlarmTime;
+    send("SET_TIME__" + newAlarmTime);
+    setAlarmToggleState(true);
     dialog.close();
 });
+
+alarmState.addEventListener('change', function(){
+    if (!this.checked){
+        send("DISABLE_ALARM");
+    } else {
+        var currentAlarmTime = document.getElementById("currentAlarmTime").innerHTML;
+        send("SET_TIME__" + currentAlarmTime);
+    }
+});
+
+
+function getAlarmToggleState(){
+    return document.getElementById("alarm-state").checked;
+}
+
+function setAlarmToggleState(newAlarmState){
+    document.getElementById("alarm-state").checked = newAlarmState;
+}
