@@ -29,3 +29,6 @@ After installing `npm` dependencies, you can use some simple scripts that can be
 * `npm run styles:vendor` copies used vendors' stylesheets to the `css` directory;
 * `npm run watch:styles` watches for changes made to the files located in the `scss` directory and runs `npm run styles`
 command.
+
+
+Based on [1oginov/Web-Bluetooth-Terminal project](https://github.com/1oginov/Web-Bluetooth-Terminal)
