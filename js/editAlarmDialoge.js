@@ -21,7 +21,7 @@ dialog.querySelector('.set-alarm').addEventListener('click', function() {
     console.log(newAlarmTime);
 
     if (newAlarmTime.length < 5){
-        newAlarmTime = "0" + currentAlarmTime;
+        newAlarmTime = "0" + newAlarmTime;
     }
     console.log(newAlarmTime);
 
