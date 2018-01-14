@@ -63,7 +63,7 @@ button {
       color: #2196F3; }
 
 .send-form {
-  display: flex;
+  display: none;
   flex-shrink: 0; }
   .send-form input {
     background: none;
